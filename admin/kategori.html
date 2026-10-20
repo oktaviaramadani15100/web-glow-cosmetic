@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kategori - Dashboard Admin Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/kategori.css">
+
+</head>
+
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="../img/logo2.png" alt="Glow.Cosmetic">
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html" class="menu-item">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="produk.html" class="menu-item">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>Produk</span>
+
+                </a>
+
+
+                <a href="kategori.html" class="menu-item active">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <span>Kategori</span>
+
+                </a>
+
+
+                <a href="stok.html" class="menu-item">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    <span>Stok</span>
+
+                </a>
+
+
+                <a href="pesanan.html" class="menu-item">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>Pesanan</span>
+
+                </a>
+
+
+                <a href="pembayaran.html" class="menu-item">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>Pembayaran</span>
+
+                </a>
+
+
+                <a href="pengiriman.html" class="menu-item">
+
+                    <i class="fa-solid fa-truck"></i>
+
+                    <span>Pengiriman</span>
+
+                </a>
+
+                <a href="user.html" class="menu-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a href="laporan.html" class="menu-item">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>Laporan</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="mobile-menu-btn" id="menuButton">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+                    <div>
+
+                        <h1>
+                            Kategori
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <span class="date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Selasa, 23 Sep 2026
+
+                    </span>
+
+
+                    <button class="notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-avatar">
+                        A
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="page-content">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            Manajemen Kategori
+                        </h2>
+
+                        <p>
+                            Kelola kategori produk Glow.Cosmetic.
+                        </p>
+
+                    </div>
+
+
+                    <button class="add-button" onclick="openCategoryModal()">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Tambah Kategori
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =========================
+                 FILTER
+            ========================== -->
+
+                <div class="filter-card">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchCategory" placeholder="Cari kategori...">
+
+                    </div>
+
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            Semua Status
+                        </option>
+
+                        <option value="Aktif">
+                            Aktif
+                        </option>
+
+                        <option value="Nonaktif">
+                            Nonaktif
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =========================
+                 CATEGORY TABLE
+            ========================== -->
+
+                <div class="category-card">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th width="6%">
+                                        No
+                                    </th>
+
+                                    <th>
+                                        Nama Kategori
+                                    </th>
+
+                                    <th>
+                                        Jumlah Produk
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th width="15%">
+                                        Aksi
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="categoryTableBody">
+
+
+                                <tr data-name="Skincare" data-status="Aktif">
+
+                                    <td>
+                                        1
+                                    </td>
+
+                                    <td>
+
+                                        <div class="category-name">
+
+                                            <div class="category-icon pink">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+
+                                            <strong>
+                                                Skincare
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        8 Produk
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status active">
+                                            <span></span>
+                                            Aktif
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="action-btn edit" onclick="editCategory(this)" title="Edit">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+
+                                            <button class="action-btn delete" onclick="deleteCategory(this)"
+                                                title="Hapus">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr data-name="Makeup" data-status="Aktif">
+
+                                    <td>
+                                        2
+                                    </td>
+
+                                    <td>
+
+                                        <div class="category-name">
+
+                                            <div class="category-icon purple">
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+
+                                            <strong>
+                                                Makeup
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        5 Produk
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status active">
+                                            <span></span>
+                                            Aktif
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="action-btn edit" onclick="editCategory(this)">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+
+                                            <button class="action-btn delete" onclick="deleteCategory(this)">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr data-name="Body Care" data-status="Aktif">
+
+                                    <td>
+                                        3
+                                    </td>
+
+                                    <td>
+
+                                        <div class="category-name">
+
+                                            <div class="category-icon orange">
+                                                <i class="fa-solid fa-spa"></i>
+                                            </div>
+
+                                            <strong>
+                                                Body Care
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        4 Produk
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status active">
+                                            <span></span>
+                                            Aktif
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="action-btn edit" onclick="editCategory(this)">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+
+                                            <button class="action-btn delete" onclick="deleteCategory(this)">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr data-name="Hair Care" data-status="Aktif">
+
+                                    <td>
+                                        4
+                                    </td>
+
+                                    <td>
+
+                                        <div class="category-name">
+
+                                            <div class="category-icon blue">
+                                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                            </div>
+
+                                            <strong>
+                                                Hair Care
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        3 Produk
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status active">
+                                            <span></span>
+                                            Aktif
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="action-btn edit" onclick="editCategory(this)">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+
+                                            <button class="action-btn delete" onclick="deleteCategory(this)">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr data-name="Parfum" data-status="Aktif">
+
+                                    <td>
+                                        5
+                                    </td>
+
+                                    <td>
+
+                                        <div class="category-name">
+
+                                            <div class="category-icon green">
+                                                <i class="fa-solid fa-spray-can-sparkles"></i>
+                                            </div>
+
+                                            <strong>
+                                                Parfum
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        2 Produk
+                                    </td>
+
+                                    <td>
+
+                                        <span class="status active">
+                                            <span></span>
+                                            Aktif
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="action-btn edit" onclick="editCategory(this)">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+
+                                            <button class="action-btn delete" onclick="deleteCategory(this)">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- EMPTY -->
+
+                    <div class="empty-table" id="emptyTable" style="display:none;">
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+                        <h3>
+                            Kategori tidak ditemukan
+                        </h3>
+
+                        <p>
+                            Coba gunakan kata pencarian yang berbeda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================
+     MODAL TAMBAH / EDIT
+========================== -->
+
+    <div class="modal-overlay" id="categoryModal">
+
+        <div class="modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h3 id="modalTitle">
+                        Tambah Kategori
+                    </h3>
+
+                    <p>
+                        Isi informasi kategori produk.
+                    </p>
+
+                </div>
+
+
+                <button class="close-modal" onclick="closeCategoryModal()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <form id="categoryForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Nama Kategori
+                    </label>
+
+                    <input type="text" id="categoryName" placeholder="Contoh: Skincare" required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="categoryStatus">
+
+                        <option value="Aktif">
+                            Aktif
+                        </option>
+
+                        <option value="Nonaktif">
+                            Nonaktif
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+                    <button type="button" class="cancel-button" onclick="closeCategoryModal()">
+
+                        Batal
+
+                    </button>
+
+
+                    <button type="submit" class="save-button">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Simpan
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/kategori.js"></script>
+
+</body>
+
+</html>

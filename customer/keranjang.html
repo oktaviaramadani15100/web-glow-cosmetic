@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keranjang Belanja - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/keranjang.css">
+</head>
+
+<body>
+
+   <header class="navbar">
+        <a href="home.html" class="logo">
+            <img src="../img/logo.jpeg" alt="Glow.Cosmetic">
+        </a>
+
+        <nav class="desktop-menu">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="produk.html" >
+                Produk
+            </a>
+
+            <a href="blog.html">
+                Blog
+            </a>
+
+            <a href="faq.html">FAQ</a>
+
+        </nav>
+
+        <div class="desktop-actions">
+            <a href="akun.html#wishlist" class="nav-icon wishlist-nav-icon" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <span class="wishlist-count" id="wishlist-count">0</span>
+            </a>
+
+            <!-- Account -->
+            <a href="login.html" class="nav-icon" aria-label="Akun">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <!-- Cart -->
+            <a href="keranjang.html" class="nav-icon cart-icon" id="cart-icon" aria-label="Keranjang">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span class="cart-count" id="cart-count">0</span>
+
+            </a>
+
+        </div>
+
+        <nav class="mobile-menu">
+
+            <a href="home.html" class="mobile-nav-item active">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 11L12 4L21 11"></path>
+                    <path d="M5 10V20H19V10"></path>
+                    <path d="M9 20V14H15V20"></path>
+                </svg>
+
+                <span>Home</span>
+
+            </a>
+
+
+            <a href="#" class="mobile-nav-item">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 7H20"></path>
+                    <path d="M6 7V20H18V7"></path>
+                    <path d="M9 7C9 4.8 10.3 3 12 3C13.7 3 15 4.8 15 7"></path>
+                </svg>
+
+                <span>Produk</span>
+
+            </a>
+
+
+            <a href="#" class="mobile-nav-item">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 12L12 20L4 12L12 4L20 12Z"></path>
+                    <circle cx="9" cy="9" r="1"></circle>
+                    <path d="M10 14L14 10"></path>
+                </svg>
+
+                <span>Promo</span>
+
+            </a>
+
+
+            <a href="#" class="mobile-nav-item">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                    <path d="M8 8H16"></path>
+                    <path d="M8 12H16"></path>
+                    <path d="M8 16H13"></path>
+                </svg>
+
+                <span>Blog</span>
+
+            </a>
+
+
+            <a href="keranjang.html" class="mobile-nav-item" id="mobile-cart-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4H5L7.2 15.5C7.4 16.4 8.2 17 9.1 17H18"></path>
+                    <path d="M7 8H21L19 14H8"></path>
+                    <circle cx="10" cy="20" r="1.5"></circle>
+                    <circle cx="18" cy="20" r="1.5"></circle>
+                </svg>
+
+                <span>Keranjang</span>
+
+                <span class="cart-count mobile-cart-count" id="mobile-cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="cart-page">
+
+        <div class="breadcrumb">
+            Home &nbsp;›&nbsp; Keranjang &nbsp;›&nbsp; Detail Produk
+        </div>
+
+        <div class="cart-header">
+
+            <h1>Keranjang Belanja</h1>
+
+            <a href="produk.html">
+                Lanjut Belanja
+            </a>
+
+        </div>
+
+
+        <div class="cart-layout">
+
+            <!-- PRODUK -->
+            <section class="cart-products">
+
+                <div id="cart-container">
+
+                    <!-- Produk akan dimasukkan melalui JavaScript -->
+
+                </div>
+
+            </section>
+
+
+            <!-- RINGKASAN -->
+            <aside class="cart-summary">
+
+                <h3>Ringkasan Belanja</h3>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">Rp 0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Ongkir</span>
+                    <strong id="shipping">Rp 10.000</strong>
+                </div>
+
+                <hr>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="total">Rp 10.000</strong>
+                </div>
+
+                <button class="checkout-btn" onclick="goCheckout()">
+                    Checkout
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </aside>
+
+        </div>
+
+
+        <div class="cart-info">
+
+            <div class="info-tabs">
+                <button class="active">Deskripsi</button>
+                <button>Cara Pakai</button>
+                <button>Ulasan (234)</button>
+            </div>
+
+            <p>
+                Semua barang yang ditampilkan merupakan produk pilihan
+                Glow.Cosmetic. Pastikan jumlah dan produk yang dipilih
+                sudah sesuai sebelum melakukan checkout.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/keranjang.js"></script>
+    <script src="../js/wishlist.js"></script>
+
+</body>
+
+</html>

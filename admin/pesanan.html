@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manajemen Pesanan - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/admin-pages.css">
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="../img/logo2.png">
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="produk.html" class="menu-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Produk</span>
+                </a>
+
+                <a href="kategori.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Kategori</span>
+                </a>
+
+                <a href="stok.html" class="menu-item">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Stok</span>
+                </a>
+
+                <a href="pesanan.html" class="menu-item active">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Pesanan</span>
+                </a>
+
+                <a href="pembayaran.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Pembayaran</span>
+                </a>
+
+                <a href="pengiriman.html" class="menu-item">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Pengiriman</span>
+                </a>
+
+                <a href="user.html" class="menu-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+                <a href="laporan.html" class="menu-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Laporan</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="mobile-menu-btn" id="menuButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <h1>Pesanan</h1>
+
+                    </div>
+
+                </div>
+
+                <div class="header-right">
+
+                    <span class="date">
+                        <i class="fa-regular fa-calendar"></i>
+                        Selasa, 23 Sep 2026
+                    </span>
+
+                    <div class="header-avatar">A</div>
+
+                </div>
+
+            </header>
+
+
+            <div class="page-content">
+
+                <div class="management-card">
+
+                    <div class="page-toolbar">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text" placeholder="Cari nomor pesanan...">
+
+                        </div>
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>NO. PESANAN</th>
+                                    <th>CUSTOMER</th>
+                                    <th>TOTAL</th>
+                                    <th>STATUS</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>#GLW001</td>
+
+                                    <td>Siti Ayu</td>
+
+                                    <td>Rp 150.000</td>
+
+                                    <td>
+                                        <span class="status process">
+                                            Diproses
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>#GLW002</td>
+
+                                    <td>Rina Putri</td>
+
+                                    <td>Rp 245.000</td>
+
+                                    <td>
+                                        <span class="status shipping">
+                                            Dikirim
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>#GLW003</td>
+
+                                    <td>Dewi Lestari</td>
+
+                                    <td>Rp 156.000</td>
+
+                                    <td>
+                                        <span class="status success">
+                                            Selesai
+                                        </span>
+                                    </td>
+
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/admin-pages.js"></script>
+
+</body>
+
+</html>

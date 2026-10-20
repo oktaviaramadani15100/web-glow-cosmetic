@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akun - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/akun.css">
+
+</head>
+
+
+<body>
+
+
+    <header class="navbar">
+        <a href="home.html" class="logo">
+            <img src="../img/logo.jpeg" alt="Glow.Cosmetic">
+        </a>
+
+        <nav class="desktop-menu">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="produk.html">
+                Produk
+            </a>
+
+            <a href="blog.html">
+                Blog
+            </a>
+
+            <a href="faq.html">
+                FAQ
+            </a>
+
+        </nav>
+
+        <div class="desktop-actions">
+            <a href="akun.html#wishlist" class="nav-icon wishlist-nav-icon" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <span class="wishlist-count" id="wishlist-count">0</span>
+            </a>
+
+            <!-- Account -->
+            <a href="login.html" class="nav-icon" aria-label="Akun">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <!-- Cart -->
+            <a href="keranjang.html" class="nav-icon cart-icon" id="cart-icon" aria-label="Keranjang">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span class="cart-count" id="cart-count">0</span>
+
+            </a>
+
+        </div>
+
+        <nav class="mobile-menu">
+
+            <a href="home.html" class="mobile-nav-item active">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 11L12 4L21 11"></path>
+                    <path d="M5 10V20H19V10"></path>
+                    <path d="M9 20V14H15V20"></path>
+                </svg>
+
+                <span>Home</span>
+
+            </a>
+
+
+            <a href="#" class="mobile-nav-item">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 7H20"></path>
+                    <path d="M6 7V20H18V7"></path>
+                    <path d="M9 7C9 4.8 10.3 3 12 3C13.7 3 15 4.8 15 7"></path>
+                </svg>
+
+                <span>Produk</span>
+
+            </a>
+
+
+            <a href="#" class="mobile-nav-item">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 12L12 20L4 12L12 4L20 12Z"></path>
+                    <circle cx="9" cy="9" r="1"></circle>
+                    <path d="M10 14L14 10"></path>
+                </svg>
+
+                <span>Promo</span>
+
+            </a>
+
+
+            <a href="#" class="mobile-nav-item">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                    <path d="M8 8H16"></path>
+                    <path d="M8 12H16"></path>
+                    <path d="M8 16H13"></path>
+                </svg>
+
+                <span>Blog</span>
+
+            </a>
+
+
+            <a href="keranjang.html" class="mobile-nav-item" id="mobile-cart-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 4H5L7.2 15.5C7.4 16.4 8.2 17 9.1 17H18"></path>
+                    <path d="M7 8H21L19 14H8"></path>
+                    <circle cx="10" cy="20" r="1.5"></circle>
+                    <circle cx="18" cy="20" r="1.5"></circle>
+                </svg>
+
+                <span>Keranjang</span>
+
+                <span class="cart-count mobile-cart-count" id="mobile-cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main class="account-page">
+
+        <section class="login-required" id="loginRequired">
+
+
+            <div class="login-icon">
+
+                <i class="fa-regular fa-user"></i>
+
+            </div>
+
+
+            <h1>
+                Hai, Beauty! 💕
+            </h1>
+
+
+            <p>
+                Login untuk melihat pesanan,
+                wishlist, alamat, dan informasi akun kamu.
+            </p>
+
+
+            <a href="login.html" class="login-button">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </a>
+
+
+            <div class="register-text">
+
+                Belum punya akun?
+
+                <a href="register.html">
+                    Daftar sekarang
+                </a>
+
+            </div>
+
+
+        </section>
+
+        <section class="account-container" id="accountContainer">
+
+            <div class="account-heading">
+
+                <h1>
+                    Akun Saya
+                </h1>
+
+
+                <p>
+                    Kelola informasi dan aktivitas
+                    belanja kamu di Glow.Cosmetic.
+                </p>
+
+            </div>
+
+            <div class="profile-card">
+
+
+                <div class="profile-left">
+
+                    <div class="profile-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <h2 id="sidebarName">
+                            Oktavia Ramadani
+                        </h2>
+
+
+                        <p id="profileEmail">
+                            oktavia@gmail.com
+                        </p>
+
+
+                        <span>
+                            Pelanggan
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button class="edit-profile" onclick="scrollToProfile()">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Edit Profil
+
+                </button>
+
+            </div>
+
+            <div class="account-menu-grid">
+
+
+                <button class="account-menu-card" onclick="showAccountSection('orders')">
+
+                    <div class="menu-card-icon pink">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div class="menu-card-text">
+
+                        <strong>
+                            Pesanan Saya
+                        </strong>
+
+                        <span>
+                            Lihat riwayat pesanan
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                </button>
+
+
+
+                <button class="account-menu-card" onclick="showAccountSection('address')">
+
+                    <div class="menu-card-icon purple">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div class="menu-card-text">
+
+                        <strong>
+                            Alamat
+                        </strong>
+
+                        <span>
+                            Kelola alamat pengiriman
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                </button>
+
+
+
+                <button class="account-menu-card" onclick="showAccountSection('payment')">
+
+                    <div class="menu-card-icon peach">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+
+                    <div class="menu-card-text">
+
+                        <strong>
+                            Pembayaran
+                        </strong>
+
+                        <span>
+                            Metode pembayaran
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                </button>
+
+
+
+                <button class="account-menu-card" onclick="showAccountSection('wishlist')">
+
+                    <div class="menu-card-icon rose">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+
+                    <div class="menu-card-text">
+
+                        <strong>
+                            Wishlist
+                        </strong>
+
+                        <span>
+                            Produk favorit kamu
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                </button>
+
+
+            </div>
+
+            <div class="account-content">
+
+                <section class="account-section active" id="profile">
+
+
+                    <div class="section-title">
+
+                        <div>
+
+                            <h2>
+                                Informasi Akun
+                            </h2>
+
+                            <p>
+                                Pastikan informasi kamu
+                                selalu terbaru.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="profile-form">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Nama Lengkap
+                            </label>
+
+                            <input type="text" id="accountName" value="Oktavia Ramadani">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input type="email" id="accountEmail" value="oktavia@gmail.com">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                No. Telepon
+                            </label>
+
+                            <input type="text" id="accountPhone" value="0812-3456-7890">
+
+                        </div>
+
+
+
+                        <button class="save-button" onclick="saveProfile()">
+
+                            Simpan Perubahan
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="account-section" id="orders">
+
+                    <div class="orders-header">
+
+                        <div>
+                            <h2>Pesanan Saya</h2>
+
+                            <!-- <p>
+                                Lihat dan lacak pesanan kamu.
+                            </p> -->
+                        </div>
+
+                        <!-- <select id="orderPeriod">
+                            <option value="all">Semua Pesanan</option>
+                            <option value="7">7 Hari Terakhir</option>
+                            <option value="30">30 Hari Terakhir</option>
+                        </select> -->
+
+                    </div>
+
+                    <div class="order-tabs">
+
+                        <button class="order-tab active" data-status="all" onclick="setOrderFilter('all', this)">
+                            Semua
+                        </button>
+
+                        <button class="order-tab" data-status="diproses" onclick="setOrderFilter('diproses', this)">
+                            Diproses
+                        </button>
+
+                        <button class="order-tab" data-status="dikirim" onclick="setOrderFilter('dikirim', this)">
+                            Dikirim
+                        </button>
+
+                        <button class="order-tab" data-status="selesai" onclick="setOrderFilter('selesai', this)">
+                            Selesai
+                        </button>
+
+                        <button class="order-tab" data-status="dibatalkan" onclick="setOrderFilter('dibatalkan', this)">
+                            Dibatalkan
+                        </button>
+
+                    </div>
+
+                    <div class="orders-list" id="ordersList">
+                    </div>
+
+                    <div class="tracking-panel" id="trackingPanel">
+
+                        <div class="tracking-placeholder">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <h3>Lacak Pesanan</h3>
+
+                            <p>
+                                Klik "Lacak Pesanan" pada pesanan kamu
+                                untuk melihat status pengiriman.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="orders-empty" id="ordersEmpty" style="display:none;">
+
+                        <div class="orders-empty-icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        <h3>
+                            Belum Ada Pesanan
+                        </h3>
+
+                        <p>
+                            Pesanan kamu akan muncul di sini
+                            setelah melakukan pembelian.
+                        </p>
+
+                        <a href="produk.html">
+                            Mulai Belanja
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <section class="account-section" id="address">
+
+                    <div class="section-title">
+                        <div>
+                            <h2>Alamat Saya</h2>
+                            <p>Kelola alamat pengiriman kamu.</p>
+                        </div>
+
+                        <button class="add-address-btn" onclick="openAddressModal('add')">
+                            <i class="fa-solid fa-plus"></i>
+                            Tambah Alamat
+                        </button>
+                    </div>
+
+
+                    <div class="address-list" id="addressList">
+
+                        <!-- ALAMAT 1 -->
+                        <div class="info-card">
+
+                            <div class="info-card-main">
+
+                                <div class="small-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+
+                                <div class="address-detail">
+
+                                    <div class="address-name">
+                                        <strong>Oktavia Ramadani</strong>
+
+                                        <span class="address-label">
+                                            Utama
+                                        </span>
+                                    </div>
+
+                                    <p>
+                                        Jl. Melati No. 12,
+                                        Jakarta Selatan
+                                    </p>
+
+                                    <span>
+                                        0812-3456-7890
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <button class="edit-address-btn" onclick="openAddressModal('edit')">
+                                <i class="fa-solid fa-pen"></i>
+                                Ubah
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="account-section" id="payment">
+
+
+                    <div class="section-title">
+
+                        <h2>
+                            Metode Pembayaran
+                        </h2>
+
+                        <p>
+                            Kelola metode pembayaran kamu.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-card-main">
+
+                            <div class="small-icon">
+
+                                <i class="fa-solid fa-building-columns"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Transfer Bank
+                                </strong>
+
+                                <p>
+                                    BCA
+                                </p>
+
+                                <span>
+                                    •••• •••• 7890
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button>
+                            Ubah
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="account-section" id="wishlist">
+
+                    <div class="section-title">
+
+                        <h2>
+                            Wishlist
+                        </h2>
+
+                        <p>
+                            Produk yang kamu simpan.
+                        </p>
+
+                    </div>
+
+
+                    <div class="empty-account" id="wishlistEmpty">
+
+                        <div class="empty-icon">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Wishlist Masih Kosong
+                        </h3>
+
+
+                        <p>
+                            Simpan produk favorit kamu
+                            untuk dibeli nanti.
+                        </p>
+
+
+                        <a href="produk.html">
+                            Lihat Produk
+                        </a>
+
+                    </div>
+
+                    <div class="wishlist-list" id="wishlistList"></div>
+
+                </section>
+
+                <section class="account-section" id="settings">
+
+
+                    <div class="section-title">
+
+                        <h2>
+                            Pengaturan
+                        </h2>
+
+                        <p>
+                            Atur preferensi akun kamu.
+                        </p>
+
+                    </div>
+
+
+                    <div class="setting-list">
+
+
+                        <div class="setting-item">
+
+                            <div>
+
+                                <strong>
+                                    Notifikasi Promo
+                                </strong>
+
+                                <p>
+                                    Terima informasi promo
+                                    dan produk terbaru.
+                                </p>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input type="checkbox" checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="setting-item">
+
+                            <div>
+
+                                <strong>
+                                    Email Marketing
+                                </strong>
+
+                                <p>
+                                    Terima informasi promo
+                                    melalui email.
+                                </p>
+
+                            </div>
+
+
+                            <label class="switch">
+
+                                <input type="checkbox">
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+            <button class="settings-link" onclick="showAccountSection('settings')">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Pengaturan Akun
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+            <button class="logout-button" id="logoutButton">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Keluar dari Akun
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+     MODAL ALAMAT
+========================= -->
+
+    <div class="address-modal" id="addressModal">
+
+        <div class="address-modal-content">
+
+            <div class="address-modal-header">
+
+                <div>
+                    <h3 id="addressModalTitle">
+                        Ubah Alamat
+                    </h3>
+
+                    <p>
+                        Lengkapi informasi alamat pengiriman.
+                    </p>
+                </div>
+
+                <button class="close-address-modal" onclick="closeAddressModal()">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="address-form">
+
+                <div class="form-group">
+
+                    <label>
+                        Nama Penerima
+                    </label>
+
+                    <input type="text" id="addressName" placeholder="Contoh: Oktavia Ramadani">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Nomor Handphone
+                    </label>
+
+                    <input type="text" id="addressPhone" placeholder="Contoh: 081234567890">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Alamat Lengkap
+                    </label>
+
+                    <textarea id="addressDetail" rows="3"
+                        placeholder="Contoh: Jl. Melati No. 12, Jakarta Selatan"></textarea>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Kota
+                        </label>
+
+                        <input type="text" id="addressCity" placeholder="Jakarta Selatan">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Kode Pos
+                        </label>
+
+                        <input type="text" id="addressPostal" placeholder="12345">
+
+                    </div>
+
+                </div>
+
+
+                <label class="main-address-check">
+
+                    <input type="checkbox" id="mainAddress">
+
+                    <span>
+                        Jadikan sebagai alamat utama
+                    </span>
+
+                </label>
+
+
+                <button class="save-address-btn" onclick="saveAddress()">
+
+                    <i class="fa-solid fa-check"></i>
+                    Simpan Alamat
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/akun.js"></script>
+    <script src="../js/wishlist.js"></script>
+
+
+    <script>
+
+        function showAccountSection(sectionId) {
+
+            const sections =
+                document.querySelectorAll(".account-section");
+
+
+            sections.forEach(function (section) {
+
+                section.classList.remove("active");
+
+            });
+
+
+            const selected =
+                document.getElementById(sectionId);
+
+
+            if (selected) {
+
+                selected.classList.add("active");
+
+                selected.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        }
+
+
+        function scrollToProfile() {
+
+            const profile =
+                document.getElementById("profile");
+
+
+            document
+                .querySelectorAll(".account-section")
+                .forEach(function (section) {
+
+                    section.classList.remove("active");
+
+                });
+
+
+            profile.classList.add("active");
+
+
+            profile.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

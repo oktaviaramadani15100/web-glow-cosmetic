@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stok - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/stok.css">
+
+</head>
+
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="../img/logo2.png" alt="Glow.Cosmetic">
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="produk.html" class="menu-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Produk</span>
+                </a>
+
+                <a href="kategori.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Kategori</span>
+                </a>
+
+                <a href="stok.html" class="menu-item active">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Stok</span>
+                </a>
+
+                <a href="pesanan.html" class="menu-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Pesanan</span>
+                </a>
+
+                <a href="pembayaran.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Pembayaran</span>
+                </a>
+
+                <a href="pengiriman.html" class="menu-item">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Pengiriman</span>
+                </a>
+
+                <a href="user.html" class="menu-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Users
+                    </span>
+                </a>
+
+                <a href="laporan.html" class="menu-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Laporan</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="mobile-menu-btn" id="menuButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <h1>
+                            Stok Produk
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <span class="date">
+                        <i class="fa-regular fa-calendar"></i>
+                        Selasa, 23 Sep 2026
+                    </span>
+
+                    <button class="notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+                    <div class="header-avatar">
+                        A
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="page-content">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="page-label">
+                            MANAJEMEN PERSEDIAAN
+                        </span>
+
+                        <p>
+                            Kelola jumlah stok produk Glow.Cosmetic.
+                        </p>
+
+                    </div>
+
+
+                    <button class="add-stock-btn" onclick="openStockModal()">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Tambah Stok
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =====================================
+                 SUMMARY
+            ====================================== -->
+
+                <section class="stock-summary">
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon pink">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Total Produk</span>
+
+                            <strong id="totalProducts">
+                                8
+                            </strong>
+
+                            <small>
+                                Produk terdaftar
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon green">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Total Stok</span>
+
+                            <strong id="totalStock">
+                                128
+                            </strong>
+
+                            <small>
+                                Unit tersedia
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon orange">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Stok Menipis</span>
+
+                            <strong id="lowStock">
+                                3
+                            </strong>
+
+                            <small>
+                                Perlu diperhatikan
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon red">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Stok Habis</span>
+
+                            <strong id="outStock">
+                                1
+                            </strong>
+
+                            <small>
+                                Produk kosong
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =====================================
+                 TABLE CARD
+            ====================================== -->
+
+                <section class="stock-card">
+
+
+                    <div class="stock-card-header">
+
+                        <div>
+
+                            <h3>
+                                Daftar Stok Produk
+                            </h3>
+
+                            <p>
+                                Informasi persediaan produk saat ini.
+                            </p>
+
+                        </div>
+
+
+                        <div class="table-actions">
+
+                            <div class="search-box">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input type="text" id="searchStock" placeholder="Cari produk...">
+
+                            </div>
+
+
+                            <select id="stockFilter">
+
+                                <option value="all">
+                                    Semua Status
+                                </option>
+
+                                <option value="available">
+                                    Tersedia
+                                </option>
+
+                                <option value="low">
+                                    Stok Menipis
+                                </option>
+
+                                <option value="empty">
+                                    Habis
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TABLE -->
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>No</th>
+
+                                    <th>Produk</th>
+
+                                    <th>Kategori</th>
+
+                                    <th>Stok</th>
+
+                                    <th>Minimum</th>
+
+                                    <th>Status</th>
+
+                                    <th>Terakhir Update</th>
+
+                                    <th>Aksi</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="stockTable">
+
+
+                                <!-- 1 -->
+
+                                <tr data-status="available">
+
+                                    <td>01</td>
+
+                                    <td>
+
+                                        <div class="product-cell">
+
+                                            <div class="product-thumb">
+
+                                                <img src="../img/Brightening serum.jpeg" alt="Brightening Serum">
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Brightening Serum
+                                                </strong>
+
+                                                <span>
+                                                    SKU: GLW-SRM-001
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Skincare
+                                    </td>
+
+                                    <td>
+
+                                        <strong class="stock-number">
+                                            25
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        10
+                                    </td>
+
+                                    <td>
+
+                                        <span class="stock-status available">
+                                            <i class="fa-solid fa-circle"></i>
+                                            Tersedia
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        23 Sep 2026
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action-btn edit" onclick="editStock('Brightening Serum', 25)"
+                                            title="Ubah Stok">
+
+                                            <i class="fa-solid fa-pen"></i>
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- 2 -->
+
+                                <tr data-status="low">
+
+                                    <td>02</td>
+
+                                    <td>
+
+                                        <div class="product-cell">
+
+                                            <div class="product-thumb">
+
+                                                <img src="../img/Moisturizer skintific.jpeg" alt="Moisturizer">
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Glow Moisturizer
+                                                </strong>
+
+                                                <span>
+                                                    SKU: GLW-MOI-002
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Skincare
+                                    </td>
+
+                                    <td>
+
+                                        <strong class="stock-number low">
+                                            8
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        10
+                                    </td>
+
+                                    <td>
+
+                                        <span class="stock-status low">
+                                            <i class="fa-solid fa-circle"></i>
+                                            Menipis
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        23 Sep 2026
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action-btn edit" onclick="editStock('Glow Moisturizer', 8)"
+                                            title="Ubah Stok">
+
+                                            <i class="fa-solid fa-pen"></i>
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- 3 -->
+
+                                <tr data-status="available">
+
+                                    <td>03</td>
+
+                                    <td>
+
+                                        <div class="product-cell">
+
+                                            <div class="product-thumb">
+
+                                                <img src="../img/Sunscreen.jpeg" alt="Sunscreen">
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Glow Sunscreen
+                                                </strong>
+
+                                                <span>
+                                                    SKU: GLW-SUN-003
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Skincare
+                                    </td>
+
+                                    <td>
+
+                                        <strong class="stock-number">
+                                            15
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        10
+                                    </td>
+
+                                    <td>
+
+                                        <span class="stock-status available">
+                                            <i class="fa-solid fa-circle"></i>
+                                            Tersedia
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        22 Sep 2026
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action-btn edit" onclick="editStock('Glow Sunscreen', 15)"
+                                            title="Ubah Stok">
+
+                                            <i class="fa-solid fa-pen"></i>
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- 4 -->
+
+                                <tr data-status="empty">
+
+                                    <td>04</td>
+
+                                    <td>
+
+                                        <div class="product-cell">
+
+                                            <div class="product-thumb">
+
+                                                <img src="../img/micellar water.jpeg" alt="Micellar Water">
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Glow Micellar Water
+                                                </strong>
+
+                                                <span>
+                                                    SKU: GLW-MIC-004
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Skincare
+                                    </td>
+
+                                    <td>
+
+                                        <strong class="stock-number empty">
+                                            0
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        10
+                                    </td>
+
+                                    <td>
+
+                                        <span class="stock-status empty">
+                                            <i class="fa-solid fa-circle"></i>
+                                            Habis
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        21 Sep 2026
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action-btn edit" onclick="editStock('Glow Micellar Water', 0)"
+                                            title="Tambah Stok">
+
+                                            <i class="fa-solid fa-plus"></i>
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- 5 -->
+
+                                <tr data-status="available">
+
+                                    <td>05</td>
+
+                                    <td>
+
+                                        <div class="product-cell">
+
+                                            <div class="product-thumb">
+
+                                                <img src="../img/body lotion.jpeg" alt="Body Lotion">
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Glow Body Lotion
+                                                </strong>
+
+                                                <span>
+                                                    SKU: GLW-BDL-005
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Body Care
+                                    </td>
+
+                                    <td>
+
+                                        <strong class="stock-number">
+                                            20
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        10
+                                    </td>
+
+                                    <td>
+
+                                        <span class="stock-status available">
+                                            <i class="fa-solid fa-circle"></i>
+                                            Tersedia
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        21 Sep 2026
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action-btn edit" onclick="editStock('Glow Body Lotion', 20)"
+                                            title="Ubah Stok">
+
+                                            <i class="fa-solid fa-pen"></i>
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- 6 -->
+
+                                <tr data-status="low">
+
+                                    <td>06</td>
+
+                                    <td>
+
+                                        <div class="product-cell">
+
+                                            <div class="product-thumb">
+
+                                                <img src="../img/Glow Body Scrub.jpeg" alt="Body Scrub">
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Glow Body Scrub
+                                                </strong>
+
+                                                <span>
+                                                    SKU: GLW-BDS-006
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Body Care
+                                    </td>
+
+                                    <td>
+
+                                        <strong class="stock-number low">
+                                            7
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        10
+                                    </td>
+
+                                    <td>
+
+                                        <span class="stock-status low">
+                                            <i class="fa-solid fa-circle"></i>
+                                            Menipis
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+                                        20 Sep 2026
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action-btn edit" onclick="editStock('Glow Body Scrub', 7)"
+                                            title="Ubah Stok">
+
+                                            <i class="fa-solid fa-pen"></i>
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================
+     MODAL TAMBAH / UBAH STOK
+====================================== -->
+
+    <div class="modal" id="stockModal">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span>
+                        MANAJEMEN STOK
+                    </span>
+
+                    <h3 id="modalTitle">
+                        Tambah Stok
+                    </h3>
+
+                </div>
+
+
+                <button class="close-modal" onclick="closeStockModal()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <form id="stockForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Produk
+                    </label>
+
+                    <select id="productName" required>
+
+                        <option value="">
+                            Pilih produk
+                        </option>
+
+                        <option value="Brightening Serum">
+                            Brightening Serum
+                        </option>
+
+                        <option value="Glow Moisturizer">
+                            Glow Moisturizer
+                        </option>
+
+                        <option value="Glow Sunscreen">
+                            Glow Sunscreen
+                        </option>
+
+                        <option value="Glow Micellar Water">
+                            Glow Micellar Water
+                        </option>
+
+                        <option value="Glow Body Lotion">
+                            Glow Body Lotion
+                        </option>
+
+                        <option value="Glow Body Scrub">
+                            Glow Body Scrub
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Jumlah Stok
+                        </label>
+
+                        <input type="number" id="stockAmount" min="0" placeholder="Contoh: 20" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Minimum Stok
+                        </label>
+
+                        <input type="number" id="minimumStock" min="0" value="10" required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Keterangan
+                    </label>
+
+                    <textarea id="stockNote" rows="3" placeholder="Contoh: Penambahan stok dari supplier..."></textarea>
+
+                </div>
+
+
+
+                <div class="modal-footer">
+
+                    <button type="button" class="cancel-btn" onclick="closeStockModal()">
+                        Batal
+                    </button>
+
+                    <button type="submit" class="save-btn">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Simpan
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/stok.js"></script>
+
+</body>
+
+</html>

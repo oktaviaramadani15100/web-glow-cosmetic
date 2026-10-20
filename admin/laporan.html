@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laporan - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/admin-pages.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="../img/logo2.png">
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="produk.html" class="menu-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Produk</span>
+                </a>
+
+                <a href="kategori.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Kategori</span>
+                </a>
+
+                <a href="stok.html" class="menu-item">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Stok</span>
+                </a>
+
+                <a href="pesanan.html" class="menu-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Pesanan</span>
+                </a>
+
+                <a href="pembayaran.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Pembayaran</span>
+                </a>
+
+                <a href="pengiriman.html" class="menu-item">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Pengiriman</span>
+                </a>
+
+                <a href="user.html" class="menu-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+                <a href="laporan.html" class="menu-item active">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Laporan</span>
+                </a>
+
+            </nav>
+
+             <div class="sidebar-bottom">
+
+                <a href="profile.html" class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="mobile-menu-btn" id="menuButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <span class="breadcrumb">
+                            Laporan
+                        </span>
+
+                        <h1>Laporan</h1>
+
+                    </div>
+
+                </div>
+
+                <div class="header-right">
+
+                    <span class="date">
+                        <i class="fa-regular fa-calendar"></i>
+                        Selasa, 23 Sep 2026
+                    </span>
+
+                    <div class="header-avatar">A</div>
+
+                </div>
+
+            </header>
+
+
+            <div class="page-content">
+
+
+                <div class="management-card">
+
+                    <div class="page-toolbar">
+
+                        <div>
+
+                            <strong style="font-size:13px;">
+                                Laporan Penjualan
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-filter">
+
+                            <select>
+
+                                <option>September 2026</option>
+                                <option>Agustus 2026</option>
+                                <option>Juli 2026</option>
+
+                            </select>
+
+                            <button class="btn btn-primary">
+
+                                <i class="fa-solid fa-download"></i>
+
+                                Cetak Laporan
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-summary">
+
+                        <div class="report-box">
+
+                            <span>Penjualan</span>
+
+                            <strong>
+                                Rp 12.450.000
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-box">
+
+                            <span>Jumlah Transaksi</span>
+
+                            <strong>
+                                245
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-box">
+
+                            <span>Stok Tersisa</span>
+
+                            <strong>
+                                320
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <br>
+
+
+                <div class="management-card">
+
+                    <div class="page-toolbar">
+
+                        <div>
+
+                            <strong style="font-size:13px;">
+                                Grafik Penjualan
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div style="height:280px;">
+
+                        <canvas id="reportChart"></canvas>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        const ctx =
+            document.getElementById("reportChart");
+
+        new Chart(ctx, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "Sen",
+                    "Sel",
+                    "Rab",
+                    "Kam",
+                    "Jum",
+                    "Sab",
+                    "Min"
+                ],
+
+                datasets: [{
+
+                    label: "Penjualan",
+
+                    data: [
+                        120,
+                        180,
+                        150,
+                        240,
+                        210,
+                        320,
+                        280
+                    ],
+
+                    borderWidth: 0
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                plugins: {
+
+                    legend: {
+                        display: false
+                    }
+
+                },
+
+                scales: {
+
+                    y: {
+                        beginAtZero: true
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+    <script src="../js/admin-pages.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manajemen Produk - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/admin-pages.css">
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="../img/logo2.png" alt="Glow.Cosmetic">
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="produk.html" class="menu-item active">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Produk</span>
+                </a>
+
+                <a href="kategori.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Kategori</span>
+                </a>
+
+                <a href="stok.html" class="menu-item">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Stok</span>
+                </a>
+
+                <a href="pesanan.html" class="menu-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Pesanan</span>
+                </a>
+
+                <a href="pembayaran.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Pembayaran</span>
+                </a>
+
+                <a href="pengiriman.html" class="menu-item">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Pengiriman</span>
+                </a>
+
+                <a href="user.html" class="menu-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+                <a href="laporan.html" class="menu-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Laporan</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button class="mobile-menu-btn" id="menuButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+
+                        <h1>
+                            Produk
+                        </h1>
+
+                    </div>
+
+                </div>
+
+                <div class="header-right">
+
+                    <span class="date">
+                        <i class="fa-regular fa-calendar"></i>
+                        Selasa, 23 Sep 2026
+                    </span>
+
+                    <div class="header-avatar">
+                        A
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <div class="page-content">
+
+                <div class="management-card">
+
+                    <div class="page-toolbar">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text" placeholder="Cari produk...">
+
+                        </div>
+
+
+                        <div class="toolbar-actions">
+
+                            <button class="btn btn-primary" onclick="openModal('productModal')">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                Tambah Produk
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>GAMBAR</th>
+                                    <th>NAMA PRODUK</th>
+                                    <th>KATEGORI</th>
+                                    <th>STOK</th>
+                                    <th>HARGA</th>
+                                    <th>STATUS</th>
+                                    <th>AKSI</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="product-thumb">
+                                            <img src="../img/Brightening serum.jpeg">
+                                        </div>
+                                    </td>
+
+                                    <td>Glow Serum</td>
+
+                                    <td>Skincare</td>
+
+                                    <td>12</td>
+
+                                    <td>Rp 49.000</td>
+
+                                    <td>
+                                        <span class="status active">
+                                            Aktif
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="action-btn action-edit">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+
+                                            <button class="action-btn action-delete">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="product-thumb">
+                                            <img src="../img/Moisturizer skintific.jpeg">
+                                        </div>
+                                    </td>
+
+                                    <td>Glow Moisturizer</td>
+
+                                    <td>Skincare</td>
+
+                                    <td>8</td>
+
+                                    <td>Rp 79.000</td>
+
+                                    <td>
+                                        <span class="status active">
+                                            Aktif
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn action-edit">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                            <button class="action-btn action-delete">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="product-thumb">
+                                            <img src="../img/Sunscreen.jpeg">
+                                        </div>
+                                    </td>
+
+                                    <td>Glow Sunscreen</td>
+
+                                    <td>Skincare</td>
+
+                                    <td>3</td>
+
+                                    <td>Rp 65.000</td>
+
+                                    <td>
+                                        <span class="status active">
+                                            Aktif
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn action-edit">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                            <button class="action-btn action-delete">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="product-thumb">
+                                            <img src="../img/body lotion.jpeg">
+                                        </div>
+                                    </td>
+
+                                    <td>Glow Body Scrub</td>
+
+                                    <td>Body Care</td>
+
+                                    <td>15</td>
+
+                                    <td>Rp 59.000</td>
+
+                                    <td>
+                                        <span class="status active">
+                                            Aktif
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn action-edit">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                            <button class="action-btn action-delete">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- MODAL TAMBAH PRODUK -->
+
+    <div class="modal" id="productModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>
+                    Tambah Produk
+                </h2>
+
+                <button class="modal-close" onclick="closeModal('productModal')">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Nama Produk</label>
+
+                <input type="text" id="productName" placeholder="Masukkan nama produk">
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Kategori</label>
+
+                    <select id="productCategory">
+
+                        <option value="">
+                            Pilih kategori
+                        </option>
+
+                        <option>Skincare</option>
+                        <option>Makeup</option>
+                        <option>Body Care</option>
+                        <option>Hair Care</option>
+                        <option>Parfum</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Stok</label>
+
+                    <input type="number" id="productStock" placeholder="0">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Harga</label>
+
+                <input type="number" id="productPrice" placeholder="Rp">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Deskripsi</label>
+
+                <textarea rows="3" placeholder="Deskripsi produk">
+            </textarea>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button class="btn btn-outline" onclick="closeModal('productModal')">
+
+                    Batal
+
+                </button>
+
+                <button class="btn btn-primary" onclick="saveProduct()">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Simpan Produk
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/admin-pages.js"></script>
+
+</body>
+
+</html>

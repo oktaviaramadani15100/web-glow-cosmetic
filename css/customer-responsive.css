@@ -1,0 +1,259 @@
+body.customer-site {
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+
+body.customer-site *,
+body.customer-site *::before,
+body.customer-site *::after {
+    min-width: 0;
+}
+
+body.customer-site img,
+body.customer-site video,
+body.customer-site iframe {
+    max-width: 100%;
+}
+
+body.customer-site .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto !important;
+    min-height: 72px;
+    padding: 8px clamp(16px, 5vw, 72px);
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(71, 42, 52, .06);
+}
+
+body.customer-site .navbar .logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    height: auto;
+}
+
+body.customer-site .navbar .logo img {
+    display: block;
+    width: auto;
+    max-width: min(190px, 42vw);
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
+}
+
+body.customer-site .customer-navigation-toggle {
+    display: none !important;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    border: 1px solid #f0dce4;
+    border-radius: 12px;
+    background: #fff;
+    color: #c74772;
+    cursor: pointer;
+}
+
+body.customer-site .customer-navigation-toggle:hover,
+body.customer-site .customer-navigation-toggle:focus-visible {
+    background: #fff4f7;
+    outline: 2px solid #df5d87;
+    outline-offset: 2px;
+}
+
+body.customer-site .customer-navigation-toggle svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+body.customer-site .customer-navigation-panel {
+    display: contents;
+}
+
+body.customer-site .customer-navigation-panel[hidden] {
+    display: none !important;
+}
+
+body.customer-site .customer-navigation-panel .mobile-menu {
+    display: none !important;
+}
+
+body.customer-site .navbar > .mobile-menu {
+    display: none !important;
+}
+
+body.customer-site .navbar .header-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: #d94b78;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+body.customer-site .navbar .header-count[hidden] {
+    display: none !important;
+}
+
+body.customer-site .wishlist-nav-icon,
+body.customer-site .cart-icon {
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    body.customer-site .navbar {
+        min-height: 64px;
+        padding: 7px 14px;
+    }
+
+    body.customer-site .navbar .logo img {
+        max-height: 48px;
+    }
+
+    body.customer-site .customer-navigation-toggle {
+        display: inline-flex !important;
+    }
+
+    body.customer-site .customer-navigation-panel {
+        position: absolute;
+        top: calc(100% + 6px);
+        right: 10px;
+        left: 10px;
+        z-index: 101;
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+        width: auto;
+        max-width: none;
+        max-height: min(75vh, 620px);
+        padding: 14px;
+        overflow-y: auto;
+        flex-direction: column;
+        border-radius: 14px;
+        border: 1px solid #f1e2e7;
+        background: #fff;
+        box-shadow: 0 16px 38px rgba(66, 37, 49, .14);
+    }
+
+    body.customer-site .customer-navigation-panel[hidden] {
+        display: none !important;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-menu {
+        display: flex !important;
+        align-items: stretch;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-actions {
+        display: flex !important;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-menu {
+        margin: 0;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-menu a {
+        display: block;
+        padding: 13px 8px;
+        border-bottom: 1px solid #f4e8ec;
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-menu a.active::after {
+        display: none;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-actions {
+        justify-content: flex-start;
+        gap: 24px;
+        padding: 10px 8px 4px;
+    }
+
+    body.customer-site .customer-navigation-panel .desktop-actions .nav-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    body.customer-site .navbar .mobile-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 760px) {
+    body.customer-site main,
+    body.customer-site .account-page,
+    body.customer-site .cart-page,
+    body.customer-site .checkout-page,
+    body.customer-site .payment-page,
+    body.customer-site .product-page,
+    body.customer-site .blog-page,
+    body.customer-site .faq-page {
+        max-width: 100%;
+    }
+
+    body.customer-site .page-header,
+    body.customer-site .hero,
+    body.customer-site .about-section,
+    body.customer-site .promo-section {
+        max-width: calc(100% - 28px);
+    }
+
+    body.customer-site .product-grid,
+    body.customer-site .gc-product-grid,
+    body.customer-site .wishlist-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    body.customer-site .customer-navigation-panel .desktop-menu a {
+        padding: 12px 6px;
+        font-size: 14px;
+    }
+
+    body.customer-site .product-grid,
+    body.customer-site .gc-product-grid,
+    body.customer-site .wishlist-grid {
+        gap: 10px;
+    }
+
+    body.customer-site .page-header,
+    body.customer-site .hero,
+    body.customer-site .about-section,
+    body.customer-site .promo-section {
+        max-width: calc(100% - 20px);
+    }
+
+    body.customer-site input,
+    body.customer-site select,
+    body.customer-site textarea,
+    body.customer-site button {
+        max-width: 100%;
+    }
+}

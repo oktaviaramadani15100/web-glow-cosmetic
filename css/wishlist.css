@@ -1,0 +1,122 @@
+.navbar .nav-icon[aria-current="page"] {
+    color: #d94b78;
+}
+
+.desktop-actions .wishlist-count {
+    display: flex;
+}
+
+.wishlist-page {
+    min-height: calc(100vh - 104px);
+}
+
+.wishlist-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.wishlist-heading h1 {
+    color: var(--gc-text);
+}
+
+.wishlist-total {
+    flex-shrink: 0;
+    padding: 9px 15px;
+    border: 1px solid var(--gc-border);
+    border-radius: 30px;
+    background: #fff;
+    color: var(--gc-pink);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.wishlist-alert {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 20px;
+    padding: 13px 16px;
+    border: 1px solid #ccebd9;
+    border-radius: 10px;
+    background: #f0fff5;
+    color: #26784a;
+    font-size: 13px;
+}
+
+.wishlist-empty {
+    padding: 55px 20px;
+    background: #fff;
+}
+
+.wishlist-empty > i {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--gc-pink);
+    font-size: 34px;
+}
+
+.wishlist-empty h2 {
+    margin: 0 0 10px;
+    color: var(--gc-text);
+    font-size: 22px;
+}
+
+.wishlist-empty p {
+    max-width: 460px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+}
+
+.wishlist-empty .gc-button {
+    margin-top: 0;
+}
+
+.wishlist-product-image {
+    position: relative;
+    background: linear-gradient(145deg, #fff8f5, #fff0f4);
+}
+
+.wishlist-image-placeholder {
+    color: #d6a6b8;
+    font-size: 42px;
+}
+
+.wishlist-remove-form {
+    z-index: 3;
+}
+
+.wishlist-cart-form {
+    width: 100%;
+    margin-top: auto;
+}
+
+.wishlist-cart-form .gc-button {
+    width: 100%;
+    margin-top: 0;
+}
+
+.wishlist-footer {
+    padding: 22px 15px;
+    border-top: 1px solid var(--gc-border);
+    background: #fff;
+    color: var(--gc-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .wishlist-page {
+        min-height: calc(100vh - 130px);
+    }
+
+    .wishlist-heading {
+        align-items: flex-start;
+    }
+
+    .wishlist-total {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Admin - Glow.Cosmetic</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="../img/logo2.png" alt="Glow.Cosmetic">
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+
+                <a href="dashboard.html" class="menu-item active">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="produk.html" class="menu-item">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>
+                        Produk
+                    </span>
+
+                </a>
+
+
+                <a href="kategori.html" class="menu-item">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <span>
+                        Kategori
+                    </span>
+
+                </a>
+
+
+                <a href="stok.html" class="menu-item">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    <span>
+                        Stok
+                    </span>
+
+                </a>
+
+
+                <a href="pesanan.html" class="menu-item">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Pesanan
+                    </span>
+
+                </a>
+
+
+                <a href="pembayaran.html" class="menu-item">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>
+                        Pembayaran
+                    </span>
+
+                </a>
+
+
+                <a href="pengiriman.html" class="menu-item">
+
+                    <i class="fa-solid fa-truck"></i>
+
+                    <span>
+                        Pengiriman
+                    </span>
+
+                </a>
+
+                <a href="user.html" class="menu-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a href="laporan.html" class="menu-item">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>
+                        Laporan
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- ADMIN -->
+
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                    <!-- <i class="fa-solid fa-chevron-right admin-arrow"></i> -->
+
+                </a>
+
+            </div>
+
+
+        </aside>
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="top-header">
+
+
+                <div class="header-left">
+
+                    <button class="mobile-menu-btn" id="menuButton">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div>
+
+                        <h1>
+                            Dashboard
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+
+                    <span class="date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Selasa, 23 Sep 2026
+
+                    </span>
+
+
+                    <button class="notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-avatar">
+
+                        A
+
+                    </div>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================
+             DASHBOARD CONTENT
+        ================================= -->
+
+            <div class="dashboard-content">
+
+
+                <!-- STATISTICS -->
+
+                <section class="stats-grid">
+
+
+                    <!-- PENJUALAN -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+
+                            <i class="fa-solid fa-money-bill-trend-up"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Penjualan
+                            </span>
+
+                            <strong>
+                                Rp 12.450.000
+                            </strong>
+
+                            <small class="increase">
+
+                                <i class="fa-solid fa-arrow-up"></i>
+
+                                12% dari bulan lalu
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PESANAN -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon red">
+
+                            <i class="fa-solid fa-receipt"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Pesanan
+                            </span>
+
+                            <strong>
+                                245
+                            </strong>
+
+                            <small class="increase">
+
+                                <i class="fa-solid fa-arrow-up"></i>
+
+                                8% dari bulan lalu
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PELANGGAN -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon pink">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Pelanggan
+                            </span>
+
+                            <strong>
+                                120
+                            </strong>
+
+                            <small class="increase">
+
+                                <i class="fa-solid fa-arrow-up"></i>
+
+                                14% dari bulan lalu
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STOK -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+
+                            <i class="fa-solid fa-box-open"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Stok Menipis
+                            </span>
+
+                            <strong>
+                                8 Produk
+                            </strong>
+
+                            <small class="warning">
+
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                                Perlu perhatian
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- ROW 1 -->
+
+                <section class="dashboard-row">
+
+
+                    <!-- GRAFIK -->
+
+                    <div class="dashboard-card sales-chart-card">
+
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Grafik Penjualan
+                                </h2>
+
+                                <p>
+                                    Performa penjualan 7 hari terakhir
+                                </p>
+
+                            </div>
+
+
+                            <select id="chartPeriod">
+
+                                <option value="7">
+                                    7 Hari Terakhir
+                                </option>
+
+                                <option value="30">
+                                    30 Hari Terakhir
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-wrapper">
+
+                            <canvas id="salesChart"></canvas>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Produk Terlaris
+                                </h2>
+
+                                <p>
+                                    Produk dengan penjualan tertinggi
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-ranking">
+
+                            <div class="ranking-item">
+
+                                <span class="ranking-number">
+                                    1
+                                </span>
+
+                                <div class="ranking-image">
+                                    <img src="../img/Brightening serum.jpeg" alt="Glow Serum">
+                                </div>
+
+                                <div class="ranking-info">
+                                    <strong>Glow Serum</strong>
+                                    <span>Serum wajah</span>
+                                </div>
+
+                                <div class="ranking-sales">
+                                    <strong>45</strong>
+                                    <span>terjual</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ranking-item">
+
+                                <span class="ranking-number">
+                                    2
+                                </span>
+
+                                <div class="ranking-image">
+                                    <img src="../img/Moisturizer skintific.jpeg" alt="Glow Moisturizer">
+                                </div>
+
+                                <div class="ranking-info">
+                                    <strong>Glow Moisturizer</strong>
+                                    <span>Moisturizer</span>
+                                </div>
+
+                                <div class="ranking-sales">
+                                    <strong>32</strong>
+                                    <span>terjual</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ranking-item">
+
+                                <span class="ranking-number">
+                                    3
+                                </span>
+
+                                <div class="ranking-image">
+                                    <img src="../img/Sunscreen.jpeg" alt="Glow Sunscreen">
+                                </div>
+
+                                <div class="ranking-info">
+                                    <strong>Glow Sunscreen</strong>
+                                    <span>Sunscreen</span>
+                                </div>
+
+                                <div class="ranking-sales">
+                                    <strong>27</strong>
+                                    <span>terjual</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ranking-item">
+
+                                <span class="ranking-number">
+                                    4
+                                </span>
+
+                                <div class="ranking-image">
+                                    <img src="../img/micellar water.jpeg" alt="Glow Facial Wash">
+                                </div>
+
+                                <div class="ranking-info">
+                                    <strong>Glow Facial Wash</strong>
+                                    <span>Facial wash</span>
+                                </div>
+
+                                <div class="ranking-sales">
+                                    <strong>20</strong>
+                                    <span>terjual</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ranking-item">
+
+                                <span class="ranking-number">
+                                    5
+                                </span>
+
+                                <div class="ranking-image">
+                                    <img src="../img/body lotion.jpeg" alt="Glow Body Lotion">
+                                </div>
+
+                                <div class="ranking-info">
+                                    <strong>Glow Body Lotion</strong>
+                                    <span>Body care</span>
+                                </div>
+
+                                <div class="ranking-sales">
+                                    <strong>13</strong>
+                                    <span>terjual</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- ROW 2 -->
+
+                <section class="dashboard-row">
+
+
+                    <!-- PESANAN TERBARU -->
+
+                    <div class="dashboard-card orders-card">
+
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Pesanan Terbaru
+                                </h2>
+
+                                <p>
+                                    Pesanan yang baru masuk
+                                </p>
+
+                            </div>
+
+                            <!-- <a href="pesanan.html">
+                                Lihat Semua
+                            </a> -->
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            No. Pesanan
+                                        </th>
+
+                                        <th>
+                                            Pelanggan
+                                        </th>
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                        <th>
+                                            Tanggal
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td>
+                                            #GLW001
+                                        </td>
+
+                                        <td>
+                                            Siti Ayu
+                                        </td>
+
+                                        <td>
+                                            Rp 150.000
+                                        </td>
+
+                                        <td>
+                                            <span class="status process">
+                                                Diproses
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            23 Sep 2026
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            #GLW002
+                                        </td>
+
+                                        <td>
+                                            Rina Putri
+                                        </td>
+
+                                        <td>
+                                            Rp 245.000
+                                        </td>
+
+                                        <td>
+                                            <span class="status shipping">
+                                                Dikirim
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            22 Sep 2026
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td>
+                                            #GLW003
+                                        </td>
+
+                                        <td>
+                                            Dewi Lestari
+                                        </td>
+
+                                        <td>
+                                            Rp 156.000
+                                        </td>
+
+                                        <td>
+                                            <span class="status success">
+                                                Selesai
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            21 Sep 2026
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-card stock-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Stok Menipis
+                                </h2>
+
+                                <p>
+                                    Produk yang perlu restock
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stock-list">
+
+                            <div class="stock-item">
+
+                                <span class="stock-number">
+                                    1
+                                </span>
+
+                                <div class="stock-image">
+                                    <img src="../img/Sunscreen.jpeg" alt="Glow Sunscreen">
+                                </div>
+
+                                <div class="stock-info">
+                                    <strong>
+                                        Glow Sunscreen
+                                    </strong>
+
+                                    <span>
+                                        Sunscreen
+                                    </span>
+                                </div>
+
+                                <div class="stock-quantity">
+                                    <strong>5</strong>
+                                    <span>stok</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stock-item">
+
+                                <span class="stock-number">
+                                    2
+                                </span>
+
+                                <div class="stock-image">
+                                    <img src="../img/Moisturizer skintific.jpeg" alt="Glow Moisturizer">
+                                </div>
+
+                                <div class="stock-info">
+                                    <strong>
+                                        Glow Moisturizer
+                                    </strong>
+
+                                    <span>
+                                        Moisturizer
+                                    </span>
+                                </div>
+
+                                <div class="stock-quantity">
+                                    <strong>8</strong>
+                                    <span>stok</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stock-item">
+
+                                <span class="stock-number">
+                                    3
+                                </span>
+
+                                <div class="stock-image">
+                                    <img src="../img/Bright boost clay stick.jpeg" alt="Glow Body Scrub">
+                                </div>
+
+                                <div class="stock-info">
+                                    <strong>
+                                        Glow Body Scrub
+                                    </strong>
+
+                                    <span>
+                                        Body care
+                                    </span>
+                                </div>
+
+                                <div class="stock-quantity">
+                                    <strong>10</strong>
+                                    <span>stok</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stock-item">
+
+                                <span class="stock-number">
+                                    4
+                                </span>
+
+                                <div class="stock-image">
+                                    <img src="../img/Brightening serum.jpeg" alt="Glow Serum">
+                                </div>
+
+                                <div class="stock-info">
+                                    <strong>
+                                        Glow Serum
+                                    </strong>
+
+                                    <span>
+                                        Serum wajah
+                                    </span>
+                                </div>
+
+                                <div class="stock-quantity">
+                                    <strong>12</strong>
+                                    <span>stok</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stock-item">
+
+                                <span class="stock-number">
+                                    5
+                                </span>
+
+                                <div class="stock-image">
+                                    <img src="../img/micellar water.jpeg" alt="Glow Facial Wash">
+                                </div>
+
+                                <div class="stock-info">
+                                    <strong>
+                                        Glow Facial Wash
+                                    </strong>
+
+                                    <span>
+                                        Facial wash
+                                    </span>
+                                </div>
+
+                                <div class="stock-quantity">
+                                    <strong>20</strong>
+                                    <span>stok</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- JS -->
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
